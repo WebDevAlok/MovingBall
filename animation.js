@@ -8,8 +8,10 @@ let radius = 40;
 
 function moveBall() {
     if(position + radius > 640) {
+        position = 600;
         moveSpeed = -speed;
-    } else if (position - radius) {
+    } else if ((position - radius) < 0) {
+        position = 40;
         moveSpeed = speed;
     }
     position += moveSpeed;
